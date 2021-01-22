@@ -24,7 +24,7 @@ exports.client = client;
 
 client.once('ready', () => {
   console.log("Muky Music is now ON");
-  client.user.setPresence({ activity: { name: 'mk!help | v1.0.0' }, status: 'online' })
+  client.user.setPresence({ activity: { name: 'mk!help' }, status: 'online' })
   .catch(console.error);
 });
 client.login(process.env.TOKEN);

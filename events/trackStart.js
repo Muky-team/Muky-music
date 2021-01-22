@@ -16,14 +16,14 @@ module.exports = {
 			.setFooter("Please wait until all options appear on screen before selecting one");
 
 		var messageSent = await message.channel.send(embed);
-		await messageSent.react("⏯");
-		await messageSent.react("⏹");
-		await messageSent.react("⏭");
-		await messageSent.react("🔁");
-		await messageSent.react("🔀");
-		await messageSent.react("🔉");
-		await messageSent.react("🔊");
-		await messageSent.react("🔇");
+			await messageSent.react("⏯");
+			await messageSent.react("⏹");
+			await messageSent.react("⏭");
+			await messageSent.react("🔁");
+			await messageSent.react("🔀");
+			await messageSent.react("🔉");
+			await messageSent.react("🔊");
+			await messageSent.react("🔇");
 
 		const filter = (reaction, user) => user.id !== message.client.user.id;
 		var collector = messageSent.createReactionCollector(filter, {
@@ -33,7 +33,7 @@ module.exports = {
 		collector.on("collect", (reaction, user) => {
 			if (!queue.tracks) return;
 			const member = message.guild.member(user);
-
+			
 			switch (reaction.emoji.name) {
 
 				case "⏭":
@@ -158,8 +158,6 @@ module.exports = {
 				default:
 					reaction.users.remove(user).catch(console.error);
 					break;
-
-
 
 			}
 

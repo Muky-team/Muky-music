@@ -1,5 +1,3 @@
-![Muky](https://i.imgur.com/5d9MfTK.jpg)
-
 # Muky
 Muky Music is a Discord music bot made with Discord.js and discord-player
 

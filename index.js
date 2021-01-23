@@ -4,17 +4,6 @@ const prefix = 'mk!';
 const { Player, Track } = require("discord-player");
 require("dotenv").config();
 
-const enmap = require("enmap");
-
-const settings = new enmap({
-  name: "settings",
-  autoFetch: true,
-  cloneLevel: "deep",
-  fetchAll: true
-});
-
-exports.settings = settings;
-
 const client = new Discord.Client({partials: ["MESSAGE", "USER", "REACTION"]});
 client.commands = new Discord.Collection();
 

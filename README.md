@@ -1,4 +1,4 @@
-![Muky](https://cdn.discordapp.com/attachments/811330490250297442/811703602518163486/Sin_titulo-1.png)
+![Muky](https://cdn.discordapp.com/attachments/811330490250297442/811704860910419998/Sin_titulo-1.png)
 # Muky 
 Muky Music is a Discord music bot made with Discord.js and discord-player
 

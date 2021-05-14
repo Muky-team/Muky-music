@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
-const client = require('../index.js').client;
-const player = require('../index.js').player;
-client.player = player;
+let player = require('../index.js').player;
+let client = require('../index.js').client;
 
 module.exports = {
 	execute: async (message, track) => {

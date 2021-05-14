@@ -1,15 +1,14 @@
 const Discord = require('discord.js');
 const fs = require("fs");
-const prefix = 'mk!';
 const { Player, Track } = require("discord-player");
+const enmap = require('enmap');
 require("dotenv").config();
+let prefix = 'mk!';
 
 const client = new Discord.Client({partials: ["MESSAGE", "USER", "REACTION"]});
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
-exports.client = client;
 
 client.once('ready', () => {
   console.log("Muky Music is now ON");
@@ -25,6 +24,7 @@ for(const file of commandFiles){
 }
 
 client.on('message', message => {
+
   if(!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -45,7 +45,8 @@ client.on('message', message => {
 const player = new Player(client);
 client.player = player;
 
-exports.player = player;
+module.exports.client = client
+module.exports.player = player;
 
 client.player.on('trackAdd', async (message, track) => {
   require("./events/trackAdd").execute(message, track);
@@ -54,4 +55,3 @@ client.player.on('trackAdd', async (message, track) => {
 client.player.on('trackStart', async (message, track) => {
   require("./events/trackStart").execute(message, track);
 });
-

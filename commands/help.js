@@ -12,7 +12,7 @@ module.exports = {
         .addField("● Add a new YouTube track to the queue ●", "`mk!play [URL / Search query]`")
         .addField("● Check the queue or delete a track from it ●", "`mk!queue [delete*] [Track number*]`")
         .setFooter("* Optional");
-        if (message.channel.type != 'dm') message.react('783522050681470986');
+        if (message.channel.type != 'dm') message.react('✅');
         message.author.send(embed);
         }
         
